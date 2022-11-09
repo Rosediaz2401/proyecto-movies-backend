@@ -1,0 +1,33 @@
+type Query {
+    ping: String
+    getMessages: [Message]
+}
+
+type Mutation {
+    createMessage(title: String!, content: String!, author: String!): Message
+    deleteMessage(_id: ID): [Message]
+     updateMessage(input: MessageInput, _id : ID!) : Message
+}
+
+type Message {
+    _id: ID
+    adult: Boolean
+    backdrop_path: String
+    # genre_ids: array
+    original_language: String
+    original_title: String
+    overview: String
+    # popularity: Number
+    poster_path: String
+    # release_date: Date
+    title: String
+    video: Boolean
+    # vote_average: Number
+    # vote_count: Number
+}
+
+input MessageInput{
+    title: String!
+    content: String!
+    author: String  
+}
