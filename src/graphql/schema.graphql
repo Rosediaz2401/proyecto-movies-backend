@@ -6,7 +6,7 @@ type Query {
 type Mutation {
     createMessage(original_language: String, original_title: String, overview: String, poster_path:String, title: String, video:Boolean): Message
     deleteMessage(_id: ID): [Message]
-     updateMessage(input: MessageInput, _id : ID!) : Message
+    updateMessage(input: MessageInput, _id : ID!) : Message
 }
 
 type Message {
@@ -22,5 +22,8 @@ type Message {
 input MessageInput{
     original_language: String
     original_title: String
-    overview: String  
+    overview: String
+    poster_path: String
+    title: String
+    video: Boolean 
 }

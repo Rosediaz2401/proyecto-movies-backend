@@ -17,6 +17,8 @@
 
 	Querys- graphql 
 
+	**** CREATE ****
+
 	{
   "original_language": "en",
   "original_title": "It",
@@ -25,6 +27,45 @@
   "title": "It 1",
   "video": false
 }
+
+****UPDATE****
+{
+  "_id": "636c557d1a68dd63470f53e0",
+  "original_language": "fr",
+  "original_title": "Terror 23",
+  "overview": "esta es una actualizacion",
+  "poster_path": "test",
+  "title": "Test terrified",
+  "video": true
+}
+
+***DELETE****
+{
+  "_id": "636c557d1a68dd63470f53e0",
+}
+
+mutation updateMessage($original_language: String, $original_title: String, $overview: String, $poster_path:String, $title: String, $video:Boolean,  $_id: ID) {
+  
+  updateMessage(input: {original_language: $original_language, original_title: $original_title, overview: $overview, poster_path: $poster_path, title: $title, video: $video},_id: $_id) {
+   	_id 
+  	original_language
+    original_title
+    overview
+    poster_path
+    title
+    video
+  }
+}
+
+# mutation updateMessage($title: String!, $content: String!, $author: String!, $_id: ID!) {
+  
+#   updateMessage(input: {title: $title, content: $content, author: $author},_id: $_id) {
+#    	_id 
+#     title
+#     content
+#     author
+#   }
+# }
  
 		
 		{

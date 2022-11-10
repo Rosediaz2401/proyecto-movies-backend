@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
+require('dotenv').config({path: __dirname + "/.env"})
 
-const uri = "mongodb+srv://proyecto:proyecto@cluster0.jc4xf2g.mongodb.net/movie_project?retryWrites=true&w=majority";
+const uri = process.env.PROYECTO_URI;
 
 mongoose
 	.connect(uri, {
