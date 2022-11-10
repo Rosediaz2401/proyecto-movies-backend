@@ -1,8 +1,8 @@
 import Message from "../../models/Message.js";
 
 const Mutation = {
-    createMessage: async ( _, { title, content, author } ) => {
-        const newMessage = new Message( { title, content, author } );
+    createMessage: async ( _, { original_language, original_title, overview, poster_path, title, video } ) => {
+        const newMessage = new Message( { original_language, original_title, overview, poster_path, title, video } );
         return await newMessage.save()
     },
     deleteMessage: async( _,{_id}) => {
