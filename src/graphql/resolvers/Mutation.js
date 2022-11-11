@@ -1,16 +1,16 @@
-import Message from "../../models/Message.js";
+import Movie from "../../models/Movie.js";
 
 const Mutation = {
-    createMessage: async ( _, { original_language, original_title, overview, poster_path, title, video } ) => {
-        const newMessage = new Message( { original_language, original_title, overview, poster_path, title, video } );
-        return await newMessage.save()
+    createMovie: async ( _, { original_language, original_title, overview, poster_path, title, video } ) => {
+        const newMovie = new Movie( { original_language, original_title, overview, poster_path, title, video } );
+        return await newMovie.save()
     },
-    deleteMessage: async( _,{_id}) => {
-        await Message.findByIdAndDelete(_id)
-        return await Message.find();
+    deleteMovie: async( _,{_id}) => {
+        await Movie.findByIdAndDelete(_id)
+        return await Movie.find();
     },
-    async updateMessage( _, { input, _id } ) {
-        return await Message.findByIdAndUpdate(_id,input, {new: true})
+    async updateMovie( _, { input, _id } ) {
+        return await Movie.findByIdAndUpdate(_id,input, {new: true})
     }
 }
     

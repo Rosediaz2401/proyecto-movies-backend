@@ -1,15 +1,15 @@
 type Query {
     ping: String
-    getMessages: [Message]
+    getMovies: [Movie]
 }
 
 type Mutation {
-    createMessage(original_language: String, original_title: String, overview: String, poster_path:String, title: String, video:Boolean): Message
-    deleteMessage(_id: ID): [Message]
-    updateMessage(input: MessageInput, _id : ID!) : Message
+    createMovie(original_language: String, original_title: String, overview: String, poster_path:String, title: String, video:Boolean): Movie
+    deleteMovie(_id: ID): [Movie]
+    updateMovie(input: MovieInput, _id : ID!) : Movie
 }
 
-type Message {
+type Movie {
     _id: ID
     original_language: String
     original_title: String
@@ -19,7 +19,7 @@ type Message {
     video: Boolean
 }
 
-input MessageInput{
+input MovieInput{
     original_language: String
     original_title: String
     overview: String

@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const messageSchema = new Schema( {
+const movieSchema = new Schema( {
     original_language: {
         type: String
     },
@@ -22,4 +22,4 @@ const messageSchema = new Schema( {
     },
 } )
 
-export default model("movie_project", messageSchema)
+export default model("movie_project", movieSchema)

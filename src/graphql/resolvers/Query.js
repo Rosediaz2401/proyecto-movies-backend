@@ -1,12 +1,12 @@
-import Message from "../../models/Message.js";
+import Movie from "../../models/Movie.js";
 const Query = {
 
     ping() {
         return "pong"
      },
 
-     getMessages: async () => {
-       return await  Message.find()
+     getMovies: async () => {
+       return await  Movie.find()
      }
      
 }
